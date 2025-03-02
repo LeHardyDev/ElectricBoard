@@ -6,39 +6,57 @@ using UnityEngine.UI;
 
 public class SpriteManager : MonoBehaviour
 {
-    public static void BuildSprite(Types.TileTypes type, int ways, bool upSideIsOpen, bool downSideIsOpen, bool leftSideIsOpen, bool rightSideIsOpen, Sprite[][] spriteArrays, Image image)
+    public static void BuildSprite(Types.TileTypes type, int ways, bool upSideIsOpen, bool downSideIsOpen, bool leftSideIsOpen, bool rightSideIsOpen, Sprite[] sprites, Image image, bool isCharged)
     {
         switch (type)
         {
             case Types.TileTypes.Empty:
-                ZeroToFourWays(0, false, false, false, false, image, spriteArrays[0]);
+                Sprite[] spriteArrayEmptyTile = { sprites[0] };
+                ZeroToFourWays(0, false, false, false, false, image, spriteArrayEmptyTile);
                 break;
             case Types.TileTypes.Start:
-                ZeroToFourWays(1, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrays[1]);
+                Sprite[] spriteArrayStart = { null, sprites[1], sprites[2], sprites[3], sprites[4] };
+                ZeroToFourWays(1, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrayStart);
                 break;
             case Types.TileTypes.Goal:
-                ZeroToFourWays(1, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrays[2]);
-                break;
-            case Types.TileTypes.Block:
-                ZeroToFourWays(0, false, false, false, false, image, spriteArrays[3]);
-                break;
-            case Types.TileTypes.StaticConducter:
-                ZeroToFourWays(ways, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrays[4]);
+                if (!isCharged)
+                {
+                    Sprite[] spriteArrayGoalNotCharged = { null, sprites[5], sprites[6], sprites[7], sprites[8] };
+                    ZeroToFourWays(1, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrayGoalNotCharged);
+                }
+                else
+                {
+                    Sprite[] spriteArrayGoalCharged = { null, sprites[9], sprites[10], sprites[11], sprites[12] };
+                    ZeroToFourWays(1, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrayGoalCharged);
+                }
                 break;
             case Types.TileTypes.PlayerConducter:
-                ZeroToFourWays(ways, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrays[5]);
-                break;
-            case Types.TileTypes.Button:
-                ZeroToFourWays(1, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrays[6]);
-                break;
-            case Types.TileTypes.Gate:
-                ZeroToFourWays(2, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrays[7]);
+                if (!isCharged)
+                {
+                    Sprite[] spriteArrayPlayerConducterNotCharged = { null, null, null, null, null, sprites[13], sprites[14], sprites[15], sprites[16], sprites[17], sprites[18], sprites[19], sprites[20], sprites[21], sprites[22], sprites[23] };
+                    ZeroToFourWays(ways, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrayPlayerConducterNotCharged);
+                }
+                else
+                {
+                    Sprite[] spriteArrayPlayerConducterCharged = { null, null, null, null, null, sprites[24], sprites[25], sprites[26], sprites[27], sprites[28], sprites[29], sprites[30], sprites[31], sprites[32], sprites[33], sprites[34] };
+                    ZeroToFourWays(ways, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrayPlayerConducterCharged);
+                }
                 break;
             case Types.TileTypes.Detonator:
-                ZeroToFourWays(1, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrays[8]);
+                if (!isCharged)
+                {
+                    Sprite[] spriteArrayDetonatorNotCharged = { null, sprites[35], sprites[36], sprites[37], sprites[38] };
+                    ZeroToFourWays(1, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrayDetonatorNotCharged);
+                }
+                else
+                {
+                    Sprite[] spriteArrayDetonatorCharged = { null, sprites[39], sprites[40], sprites[41], sprites[42] };
+                    ZeroToFourWays(1, upSideIsOpen, downSideIsOpen, leftSideIsOpen, rightSideIsOpen, image, spriteArrayDetonatorCharged);
+                }
                 break;
             case Types.TileTypes.BreakableBlock:
-                ZeroToFourWays(0, false, false, false, false, image, spriteArrays[9]);
+                Sprite[] spriteArrayBreakableBlockTile = { sprites[43] };
+                ZeroToFourWays(0, false, false, false, false, image, spriteArrayBreakableBlockTile);
                 break;
 
         }

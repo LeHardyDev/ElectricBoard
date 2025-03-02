@@ -9,11 +9,7 @@ public class Types : MonoBehaviour
         Empty,
         Start,
         Goal,
-        Block,
-        StaticConducter,
         PlayerConducter,
-        Button,
-        Gate,
         Detonator,
         BreakableBlock
     }
