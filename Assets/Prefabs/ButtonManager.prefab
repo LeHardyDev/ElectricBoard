@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4122813577992415003
+--- !u!1 &5080742032271035393
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4122813577992415001}
-  - component: {fileID: 4122813577992415002}
+  - component: {fileID: 2359336687926889253}
+  - component: {fileID: 8099092529472471799}
   m_Layer: 0
   m_Name: ButtonManager
   m_TagString: Untagged
@@ -17,28 +17,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4122813577992415001
+--- !u!4 &2359336687926889253
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4122813577992415003}
+  m_GameObject: {fileID: 5080742032271035393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 838.18304, y: 433.69934, z: -10.999173}
+  m_LocalPosition: {x: 550.8806, y: 273.48663, z: -12.021283}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4122813577992415002
+--- !u!114 &8099092529472471799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4122813577992415003}
+  m_GameObject: {fileID: 5080742032271035393}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61e78291f550f1a408cf422218d9343b, type: 3}
@@ -58,10 +58,10 @@ MonoBehaviour:
   isUpDownRight: 0
   isDownLeftRight: 0
   crossSelected: 0
-  buttonLine: {fileID: 6748805317742979832, guid: 38078096ff79198489906b829824c13f, type: 3}
-  buttonCorner: {fileID: 4612359234400569254, guid: 37453e9c5a4f5394b9cbfc4e6c829e4f, type: 3}
-  buttonT: {fileID: 5705278230237819564, guid: fcf8970071a93104fa7683d840cddbac, type: 3}
-  buttonCross: {fileID: 2888588140162817572, guid: f300246753451784eb38b231a53b7712, type: 3}
+  buttonLine: {fileID: 3362962442364537454, guid: 38078096ff79198489906b829824c13f, type: 3}
+  buttonCorner: {fileID: 2732517082309521600, guid: 37453e9c5a4f5394b9cbfc4e6c829e4f, type: 3}
+  buttonT: {fileID: 1093478572884045017, guid: fcf8970071a93104fa7683d840cddbac, type: 3}
+  buttonCross: {fileID: 8786424152129778829, guid: f300246753451784eb38b231a53b7712, type: 3}
   lineSpriteUpDown: {fileID: 21300000, guid: 65858f91c1bd24a43acf3269ba0b7f99, type: 3}
   lineSpriteLeftRight: {fileID: 21300000, guid: 5058313aeeb86884788240d84c43fee1, type: 3}
   cornerSpriteUpLeft: {fileID: 21300000, guid: 914af3782f1149c4d9cf95cd44ce3b61, type: 3}

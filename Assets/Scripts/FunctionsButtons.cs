@@ -5,20 +5,37 @@ using UnityEngine.UI;
 
 public class FunctionsButtons : MonoBehaviour
 {
-    
+
+    public static FunctionsButtons instance;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     public bool lineSelected;
     public bool isUpDown;
     public bool isLeftRight;
+    
     public bool cornerSelected;
     public bool isUpLeft;
     public bool isUpRight;
     public bool isDownLeft;
     public bool isDownRight;
+    
     public bool tSelected;
     public bool isUpDownLeft;
     public bool isUpLeftRight;
     public bool isUpDownRight;
     public bool isDownLeftRight;
+
     public bool crossSelected;
 
     [Header("Images")]
@@ -38,6 +55,70 @@ public class FunctionsButtons : MonoBehaviour
     public Sprite tSpriteUpLeftRight;
     public Sprite tSpriteUpDownRight;
     public Sprite tSpriteDownLeftRight;
+
+    private void Start()
+    {
+        //Setting button sprite to default
+        buttonLine.sprite = lineSpriteUpDown;
+        buttonCorner.sprite = cornerSpriteUpLeft;
+        buttonT.sprite = tSpriteUpDownLeft;
+
+        //deselect all buttons
+        lineSelected = false;
+        cornerSelected = false;
+        tSelected = false;
+        crossSelected = false;
+
+        //Setting Button Rotation Bools
+        isUpDown = false;
+        isUpLeft = false;
+        isUpRight = false;
+        isDownRight = false;
+        isDownLeft = false;
+        isUpDownLeft = false;
+        isUpLeftRight = false;
+        isUpDownRight = false;
+        isDownLeftRight = false;
+
+
+        //Setting button highlight
+        buttonLine.color = Color.white;
+        buttonCorner.color = Color.white;
+        buttonT.color = Color.white;
+        buttonCross.color = Color.white;
+    }
+
+    private void OnApplicationQuit()
+    {
+        //Setting button sprite to default
+        buttonLine.sprite = lineSpriteUpDown;
+        buttonCorner.sprite = cornerSpriteUpLeft;
+        buttonT.sprite = tSpriteUpDownLeft;
+
+        //deselect all buttons
+        lineSelected = false;
+        cornerSelected = false;
+        tSelected = false;
+        crossSelected = false;
+
+        //Setting Button Rotation Bools
+        isUpDown = false;
+        isUpLeft = false;
+        isUpRight = false;
+        isDownRight = false;
+        isDownLeft = false;
+        isUpDownLeft = false;
+        isUpLeftRight = false;
+        isUpDownRight = false;
+        isDownLeftRight = false;
+
+
+        //Setting button highlight
+        buttonLine.color = Color.white;
+        buttonCorner.color = Color.white;
+        buttonT.color = Color.white;
+        buttonCross.color = Color.white;
+    }
 
     public void FunctionsButtonLine()
     {
@@ -60,7 +141,7 @@ public class FunctionsButtons : MonoBehaviour
         {
             //Setting Button Sprite
             buttonLine.sprite = lineSpriteUpDown;
-            buttonCorner.sprite = cornerSpriteUpRight;
+            buttonCorner.sprite = cornerSpriteUpLeft;
             buttonT.sprite = tSpriteUpDownLeft;
 
             //Setting Button Bools
@@ -69,8 +150,9 @@ public class FunctionsButtons : MonoBehaviour
             tSelected = false;
             crossSelected = false;
 
-            //Setting Button Rotation Bools
+            //Setting rotation bools to default
             isUpDown = true;
+            isLeftRight = false;
             isUpLeft = false;
             isUpRight = false;
             isDownRight = false;
@@ -80,8 +162,8 @@ public class FunctionsButtons : MonoBehaviour
             isUpDownRight = false;
             isDownLeftRight = false;
 
-            
-            //Setting Button Highlight
+
+            //Setting button highlight to default
             buttonLine.color = Color.white;
             buttonCorner.color = Color.gray;
             buttonT.color = Color.gray;
@@ -122,7 +204,7 @@ public class FunctionsButtons : MonoBehaviour
         {
             //Setting Button Sprite
             buttonLine.sprite = lineSpriteUpDown;
-            buttonCorner.sprite = cornerSpriteUpRight;
+            buttonCorner.sprite = cornerSpriteUpLeft;
             buttonT.sprite = tSpriteUpDownLeft;
 
             // setting Button Bools
@@ -177,7 +259,7 @@ public class FunctionsButtons : MonoBehaviour
         {
             //Setting Button Sprite
             buttonLine.sprite = lineSpriteUpDown;
-            buttonCorner.sprite = cornerSpriteUpRight;
+            buttonCorner.sprite = cornerSpriteUpLeft;
             buttonT.sprite = tSpriteUpDownLeft;
             
             //Setting Button Bools
@@ -209,7 +291,7 @@ public class FunctionsButtons : MonoBehaviour
         {
             //Setting Button Sprite
             buttonLine.sprite = lineSpriteUpDown;
-            buttonCorner.sprite = cornerSpriteUpRight;
+            buttonCorner.sprite = cornerSpriteUpLeft;
             buttonT.sprite = tSpriteUpDownLeft;
 
             //Setting Button Bools

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Tiles : MonoBehaviour
 {
     public Types.TileTypes tileType;
-    int ways;
+    public int ways;
     public bool upSideIsOpen;
     public bool downSideIsOpen;
     public bool leftSideIsOpen;

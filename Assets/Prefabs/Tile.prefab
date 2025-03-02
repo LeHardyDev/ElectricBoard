@@ -211,5 +211,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ef840b3036bc964b8fa0c8939d7a298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonManager: {fileID: 4122813577992415002, guid: 8920c05947735924e83e3ff2fc731c46, type: 3}
+  gameObjectButtonManager: {fileID: 5080742032271035393, guid: 8920c05947735924e83e3ff2fc731c46, type: 3}
   tile: {fileID: 8025507578549816754}

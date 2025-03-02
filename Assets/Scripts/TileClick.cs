@@ -1,102 +1,111 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class TileClick : MonoBehaviour
 {
-    public FunctionsButtons buttonManager;
     public Tiles tile;
     public void CreateConducter()
     {
         if (tile.tileType == Types.TileTypes.Empty)
         {
-            if (buttonManager.lineSelected)
+            if (FunctionsButtons.instance.lineSelected)
             {
-                if (buttonManager.isUpDown)
+                if (FunctionsButtons.instance.isUpDown)
                 {
                     tile.tileType = Types.TileTypes.PlayerConducter;
+                    tile.ways = 2;
                     tile.upSideIsOpen = true;
                     tile.downSideIsOpen = true;
                     SpriteManager.BuildSprite(tile.tileType, 2, true, true, false, false, tile.sprites, tile.image, false);
                 }
-                else if (buttonManager.isLeftRight)
+                else if (FunctionsButtons.instance.isLeftRight)
                 {
                     tile.tileType = Types.TileTypes.PlayerConducter;
+                    tile.ways = 2;
                     tile.leftSideIsOpen = true;
                     tile.rightSideIsOpen = true;
                     SpriteManager.BuildSprite(tile.tileType, 2, false, false, true, true, tile.sprites, tile.image, false);
                 }
             }
-            else if (buttonManager.cornerSelected) 
+            else if (FunctionsButtons.instance.cornerSelected) 
             {
-                if (buttonManager.isUpLeft)
+                if (FunctionsButtons.instance.isUpLeft)
                 {
                     tile.tileType = Types.TileTypes.PlayerConducter;
+                    tile.ways = 2;
                     tile.upSideIsOpen = true;
                     tile.leftSideIsOpen = true;
                     SpriteManager.BuildSprite(tile.tileType, 2, true, false, true, false, tile.sprites, tile.image, false);
                 }
-                else if (buttonManager.isUpRight)
+                else if (FunctionsButtons.instance.isUpRight)
                 {
                     tile.tileType = Types.TileTypes.PlayerConducter;
+                    tile.ways = 2;
                     tile.upSideIsOpen = true;
                     tile.rightSideIsOpen = true;
                     SpriteManager.BuildSprite(tile.tileType, 2, true, false, false, true, tile.sprites, tile.image, false);
                 }
-                else if (buttonManager.isDownRight)
+                else if (FunctionsButtons.instance.isDownRight)
                 {
                     tile.tileType = Types.TileTypes.PlayerConducter;
+                    tile.ways = 2;
                     tile.downSideIsOpen = true;
                     tile.rightSideIsOpen = true;
                     SpriteManager.BuildSprite(tile.tileType, 2, false, true, false, true, tile.sprites, tile.image, false);
                 }
-                else if (buttonManager.isDownLeft)
+                else if (FunctionsButtons.instance.isDownLeft)
                 {
                     tile.tileType = Types.TileTypes.PlayerConducter;
+                    tile.ways = 2;
                     tile.downSideIsOpen = true;
                     tile.leftSideIsOpen = true;
                     SpriteManager.BuildSprite(tile.tileType, 2, false, true, true, false, tile.sprites, tile.image, false);
                 }
             }
-            else if (buttonManager.tSelected)
+            else if (FunctionsButtons.instance.tSelected)
             {
-                if (buttonManager.isUpDownLeft)
+                if (FunctionsButtons.instance.isUpDownLeft)
                 {
                     tile.tileType = Types.TileTypes.PlayerConducter;
+                    tile.ways = 3;
                     tile.upSideIsOpen = true;
                     tile.downSideIsOpen = true;
                     tile.leftSideIsOpen = true;
                     SpriteManager.BuildSprite(tile.tileType, 3, true, true, true, false, tile.sprites, tile.image, false);
                 }
-                else if (buttonManager.isUpLeftRight)
+                else if (FunctionsButtons.instance.isUpLeftRight)
                 {
                     tile.tileType = Types.TileTypes.PlayerConducter;
+                    tile.ways = 3;
                     tile.upSideIsOpen = true;
                     tile.leftSideIsOpen = true;
                     tile.rightSideIsOpen = true;
                     SpriteManager.BuildSprite(tile.tileType, 3, true, false, true, true, tile.sprites, tile.image, false);
                 }
-                else if (buttonManager.isUpDownRight)
+                else if (FunctionsButtons.instance.isUpDownRight)
                 {
                     tile.tileType = Types.TileTypes.PlayerConducter;
+                    tile.ways = 3;
                     tile.upSideIsOpen = true;
                     tile.downSideIsOpen = true;
                     tile.rightSideIsOpen = true;
                     SpriteManager.BuildSprite(tile.tileType, 3, true, true, false, true, tile.sprites, tile.image, false);
                 }
-                else if (buttonManager.isDownLeftRight)
+                else if (FunctionsButtons.instance.isDownLeftRight)
                 {
                     tile.tileType = Types.TileTypes.PlayerConducter;
+                    tile.ways = 3;
                     tile.downSideIsOpen = true;
                     tile.leftSideIsOpen = true;
                     tile.rightSideIsOpen = true;
                     SpriteManager.BuildSprite(tile.tileType, 3, false, true, true, true, tile.sprites, tile.image, false);
                 }
             }
-            else if (buttonManager.crossSelected) 
+            else if (FunctionsButtons.instance.crossSelected) 
             {
                 tile.tileType = Types.TileTypes.PlayerConducter;
+                tile.ways = 4;
                 tile.upSideIsOpen = true;
                 tile.downSideIsOpen = true;
                 tile.leftSideIsOpen = true;
