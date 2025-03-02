@@ -4,3 +4,6 @@
 It is a puzzle game in which you have to connect the start tile (Generator) to the goal tile (Factory). 
 Due to time limitation I was not able to polish the game or code.
 Feel free to giving me constructive critique.
+
+Here is the link to the Build Version
+https://lehardygd.itch.io/panic-at-the-electric-board
